@@ -5,9 +5,11 @@ You can either take the needed parts out and stick it into your plugin or compil
 
 Should handle most ways to equip armor and not allow you to spam click equipping armor to get any possible benefits you might be adding using the event.
 
+Click here to find the [Spigot](https://www.spigotmc.org/resources/lib-armorequipevent.5478/) page for this plugin/library.
+
 Current ArmorEquipEvent Version: 1.8
 
-## Use in Project
+## Import into Project
 ### Maven
 ```xml
 	<repositories>
@@ -37,6 +39,35 @@ Current ArmorEquipEvent Version: 1.8
 	        implementation 'com.github.qShadxw:ArmorEquipEvent:1.8-release'
 	}
 ```
+
+## Usage
+```java
+@EventHandler
+public void onEquip(ArmorEquipEvent event) {
+    
+    if (e.getNewArmorPiece() != null && e.getNewArmorPiece().getType() != Material.AIR) {
+        // Player has Equipped an Armor Piece.
+    }
+
+    if (e.getOldArmorPiece() != null && e.getOldArmorPiece().getType() != Material.AIR) {
+        // Player has Unequipped an Armor Piece.    
+    }
+    
+}
+```
+You can also use the `getMethod()` function within the event to find how exactly they equipped or unequipped that armor piece.
+Methods:
+```
+SHIFT_CLICK: Pressing shift + left or right click
+DRAG: Holding shift and dragging the item over the inventory slots then releasing left click.
+PICK_DROP: Picking up the item and dropping it into the armor slot or inventory
+HOTBAR: Right clicking a piece of armor from the 9 hotbar slots.
+HOTBAR_SWAP: When you press 1-9 while hovering over an armor slot to equip/unequip the armor piece to/from that slot
+DISPENSER: Being in range of a dispenser when it shoots a piece of armor out.
+BROKE: When an armor piece breaks(If cancelled durability gets set to 0 which means one hit till it breaks again)
+DEATH: When a player dies.
+```
+These can be found in the [ArmorEquipEvent.EquipMethod](https://github.com/qShadxw/ArmorEquipEvent/blob/master/src/com/codingforcookies/armorequip/ArmorEquipEvent.java#L105) class.
 
 ## Disclaimer
 *By [qShadxw](https://github.com/qShadxw) (me)*
