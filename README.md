@@ -13,4 +13,14 @@ This is a fork of an already-existing repository that is listed on GitHub by [Ar
 
 I have forked this to update it to the current versions of Minecraft and fix bugs that I come across.
 
-Current Minecraft Version: [1.19.4](https://www.minecraft.net/en-us/article/minecraft-java-edition-1-19-4)
+Current Minecraft Version: [1.19.4](https://www.minecraft.net/en-us/article/minecraft-java-edition-
+
+### Original Author & Collaborators
+Author:
+- [Arnah](https://github.com/Arnuh)
+
+Collaborator(s): 
+- [badbones69](https://github.com/badbones69)
+- [borlea](https://github.com/borlea)
+- [Keebler17](https://github.com/Keebler17)
+- [Kaeios](https://github.com/Kaeios)
