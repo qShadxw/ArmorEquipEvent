@@ -8,6 +8,37 @@ Click here to find the [Spigot](https://www.spigotmc.org/resources/lib-armorequi
 
 Current ArmorEquipEvent Version: 1.8
 
+## Import into Project
+### Maven
+```xml
+	<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+```
+```xml
+	<dependency>
+	    <groupId>com.github.qShadxw</groupId>
+	    <artifactId>ArmorEquipEvent</artifactId>
+	    <version>1.8.2-release</version>
+	</dependency>
+```
+### Gradle
+```gradle
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+```gradle
+	dependencies {
+	        implementation 'com.github.qShadxw:ArmorEquipEvent:1.8.2-release'
+	}
+```
 ## Usage
 ```java
 @EventHandler
