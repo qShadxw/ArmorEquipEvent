@@ -75,7 +75,9 @@ These can be found in the [ArmorEquipEvent.EquipMethod](https://github.com/qShad
 This is a fork of an already-existing repository that is listed on GitHub by [Arnah](https://github.com/Arnuh).
 <br>[Link to repository](https://github.com/Arnuh/ArmorEquipEvent).
 
-I have forked this to update it to the current versions of Minecraft and fix bugs that I come across.
+I have forked this to update it to the current versions of Minecraft and fix bugs that I come across. 
+This is completely allowed by the author if you check the original repository. They mention "I give full permission to anyone to take over this project." 
+and that they are no-longer interested in the plugin.
 
 Current Minecraft Version: [1.19.4](https://www.minecraft.net/en-us/article/minecraft-java-edition-1-19-4)
 
