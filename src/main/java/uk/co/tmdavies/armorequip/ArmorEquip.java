@@ -7,7 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
  * @author qShadxw
  * @since March 26, 2023
  */
-public class Main extends JavaPlugin {
+public class ArmorEquip extends JavaPlugin {
 
 	@Override
 	public void onEnable(){
