@@ -13,7 +13,7 @@ This is a fork of an already-existing repository that is listed on GitHub by [Ar
 
 I have forked this to update it to the current versions of Minecraft and fix bugs that I come across.
 
-Current Minecraft Version: [1.19.4](https://www.minecraft.net/en-us/article/minecraft-java-edition-
+Current Minecraft Version: [1.19.4](https://www.minecraft.net/en-us/article/minecraft-java-edition-1-19-4)
 
 ### Original Author & Collaborators
 Author:
