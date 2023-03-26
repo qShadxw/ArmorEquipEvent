@@ -169,25 +169,25 @@ public class ArmorListener implements Listener{
 		ArmorEquipEvent armorEquipEvent = new ArmorEquipEvent(p, EquipMethod.BROKE, type, e.getBrokenItem(), null);
 		Bukkit.getServer().getPluginManager().callEvent(armorEquipEvent);
 
-		if (armorEquipEvent.isCancelled()) {
-			ItemStack i = e.getBrokenItem().clone();
-			i.setAmount(1);
-			ItemMeta iMeta = i.getItemMeta();
+		if (!armorEquipEvent.isCancelled()) return;
 
-			// Set Durability is now deprecated. Changing to new method.
-			if (iMeta instanceof Damageable) {
-				Damageable damageable = (Damageable) iMeta;
+		ItemStack i = e.getBrokenItem().clone();
+		i.setAmount(1);
+		ItemMeta iMeta = i.getItemMeta();
 
-				damageable.setDamage(damageable.getDamage() -1);
-				i.setItemMeta(damageable);
-			}
+		// Set Durability is now deprecated. Changing to new method.
+		if (iMeta instanceof Damageable) {
+			Damageable damageable = (Damageable) iMeta;
 
-			switch (type) {
-				case HELMET -> p.getInventory().setHelmet(i);
-				case CHESTPLATE -> p.getInventory().setChestplate(i);
-				case LEGGINGS -> p.getInventory().setLeggings(i);
-				case BOOTS -> p.getInventory().setBoots(i);
-			}
+			damageable.setDamage(damageable.getDamage() + 1);
+			i.setItemMeta(damageable);
+		}
+
+		switch (type) {
+			case HELMET -> p.getInventory().setHelmet(i);
+			case CHESTPLATE -> p.getInventory().setChestplate(i);
+			case LEGGINGS -> p.getInventory().setLeggings(i);
+			case BOOTS -> p.getInventory().setBoots(i);
 		}
 	}
 
