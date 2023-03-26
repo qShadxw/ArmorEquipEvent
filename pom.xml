@@ -4,6 +4,8 @@
     <artifactId>ArmorEquipEvent</artifactId>
     <version>1.8-SNAPSHOT</version>
 
+    <name>ArmorEquipEvent</name>
+
     <properties>
         <java.version>19</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
