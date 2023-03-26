@@ -21,7 +21,7 @@ Current ArmorEquipEvent Version: 1.8
 ```
 ```xml
 	<dependency>
-	    <groupId>com.github.qShadxw</groupId>
+	    <groupId>uk.co.tmdavies</groupId>
 	    <artifactId>ArmorEquipEvent</artifactId>
 	    <version>1.8-release</version>
 	</dependency>
