@@ -23,7 +23,7 @@ Current ArmorEquipEvent Version: 1.8
 	<dependency>
 	    <groupId>com.github.qShadxw</groupId>
 	    <artifactId>ArmorEquipEvent</artifactId>
-	    <version>1.8-release</version>
+	    <version>1.8.1-release</version>
 	</dependency>
 ```
 ### Gradle
