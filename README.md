@@ -1,5 +1,4 @@
 # ArmorEquipEvent
-[![](https://jitpack.io/v/qShadxw/ArmorEquipEvent.svg)](https://jitpack.io/#qShadxw/ArmorEquipEvent)
 
 You can either take the needed parts out and stick it into your plugin or compile it as a jar and use it as a plugin depend, either way it's useless without adding function to the event.
 
