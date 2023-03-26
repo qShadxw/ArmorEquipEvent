@@ -1,6 +1,4 @@
-package com.codingforcookies.armorequip;
-
-import java.util.List;
+package uk.co.tmdavies.armorequip;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -16,10 +14,11 @@ import org.bukkit.event.inventory.InventoryType.SlotType;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerItemBreakEvent;
 import org.bukkit.inventory.ItemStack;
-
-import com.codingforcookies.armorequip.ArmorEquipEvent.EquipMethod;
 import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.ItemMeta;
+import uk.co.tmdavies.armorequip.ArmorEquipEvent.EquipMethod;
+
+import java.util.List;
 
 /**
  * @originalAuthor Arnah

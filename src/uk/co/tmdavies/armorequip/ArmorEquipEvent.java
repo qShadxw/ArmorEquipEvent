@@ -1,4 +1,4 @@
-package com.codingforcookies.armorequip;
+package uk.co.tmdavies.armorequip;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;

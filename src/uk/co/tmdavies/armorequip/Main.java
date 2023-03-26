@@ -1,4 +1,4 @@
-package com.codingforcookies.armorequip;
+package uk.co.tmdavies.armorequip;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
