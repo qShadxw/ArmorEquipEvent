@@ -6,7 +6,7 @@ Should handle most ways to equip armor and not allow you to spam click equipping
 
 Click here to find the [Spigot](https://www.spigotmc.org/resources/lib-armorequipevent.5478/) page for this plugin/library.
 
-Current ArmorEquipEvent Version: 1.8
+Current ArmorEquipEvent Version: 1.8.2
 
 ## Usage
 Git clone, build then use inside your project!
