@@ -27,6 +27,8 @@ public enum ArmorType{
 		String type = itemStack.getType().name();
 
 		if (type.equals("ELYTRA")) return CHESTPLATE;
+		if (!type.contains("_")) return null;
+
 		String lastPart = type.split("_")[1];
 
 		return switch(lastPart) {

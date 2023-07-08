@@ -10,14 +10,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class ArmorEquip extends JavaPlugin {
 
 	@Override
-	public void onEnable(){
+	public void onEnable() {
 		saveDefaultConfig();
 		getServer().getPluginManager().registerEvents(new ArmorListener(getConfig().getStringList("blocked")), this);
 		try{
 			//Better way to check for this? Only in 1.13.1+?
 			Class.forName("org.bukkit.event.block.BlockDispenseArmorEvent");
 			getServer().getPluginManager().registerEvents(new DispenserArmorListener(), this);
-		}catch(Exception ignored){}
+		} catch(Exception ignored) {}
 	}
 
 }

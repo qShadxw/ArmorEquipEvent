@@ -62,8 +62,10 @@ public class ArmorListener implements Listener{
 						&& (equipping == isAirOrNull(e.getWhoClicked().getInventory().getHelmet()))
 						|| newArmorType.equals(ArmorType.CHESTPLATE)
 						&& (equipping == isAirOrNull(e.getWhoClicked().getInventory().getChestplate()))
-						|| newArmorType.equals(ArmorType.LEGGINGS) && (equipping == isAirOrNull(e.getWhoClicked().getInventory().getLeggings()))
-						|| newArmorType.equals(ArmorType.BOOTS) && (equipping == isAirOrNull(e.getWhoClicked().getInventory().getBoots()))) {
+						|| newArmorType.equals(ArmorType.LEGGINGS)
+						&& (equipping == isAirOrNull(e.getWhoClicked().getInventory().getLeggings()))
+						|| newArmorType.equals(ArmorType.BOOTS)
+						&& (equipping == isAirOrNull(e.getWhoClicked().getInventory().getBoots()))) {
 
 					ArmorEquipEvent armorEquipEvent = new ArmorEquipEvent((Player) e.getWhoClicked(), EquipMethod.SHIFT_CLICK, newArmorType, equipping ? null : e.getCurrentItem(), equipping ? e.getCurrentItem() : null);
 					Bukkit.getServer().getPluginManager().callEvent(armorEquipEvent);
@@ -104,10 +106,10 @@ public class ArmorListener implements Listener{
 	}
 	
 	@EventHandler(priority =  EventPriority.HIGHEST)
-	public void playerInteractEvent(PlayerInteractEvent e){
+	public void playerInteractEvent(PlayerInteractEvent e) {
 		if (e.useItemInHand().equals(Result.DENY)) return;
 		if (e.getAction() == Action.PHYSICAL) return;
-		if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK){
+		if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
 			Player player = e.getPlayer();
 
 			if (!e.useInteractedBlock().equals(Result.DENY)) {
@@ -122,13 +124,17 @@ public class ArmorListener implements Listener{
 			ArmorType newArmorType = ArmorType.matchType(e.getItem());
 
 			if (newArmorType != null) {
-				if (newArmorType.equals(ArmorType.HELMET)
-						&& isAirOrNull(e.getPlayer().getInventory().getHelmet())
-						|| newArmorType.equals(ArmorType.CHESTPLATE)
-						&& isAirOrNull(e.getPlayer().getInventory().getChestplate())
-						|| newArmorType.equals(ArmorType.LEGGINGS) && isAirOrNull(e.getPlayer().getInventory().getLeggings())
-						|| newArmorType.equals(ArmorType.BOOTS) && isAirOrNull(e.getPlayer().getInventory().getBoots())) {
+				boolean isAirOrNull = false;
 
+				switch (newArmorType) {
+					case HELMET -> isAirOrNull = isAirOrNull(e.getPlayer().getInventory().getHelmet());
+					case CHESTPLATE -> isAirOrNull = isAirOrNull(e.getPlayer().getInventory().getChestplate());
+					case LEGGINGS -> isAirOrNull = isAirOrNull(e.getPlayer().getInventory().getLeggings());
+					case BOOTS -> isAirOrNull = isAirOrNull(e.getPlayer().getInventory().getBoots());
+				}
+
+				// Event is constructed with null oldPiece if nothing is equipped in the specific player armor slot.
+				if (isAirOrNull) {
 					ArmorEquipEvent armorEquipEvent = new ArmorEquipEvent(e.getPlayer(), EquipMethod.HOTBAR, ArmorType.matchType(e.getItem()), null, e.getItem());
 					Bukkit.getServer().getPluginManager().callEvent(armorEquipEvent);
 
@@ -136,6 +142,24 @@ public class ArmorListener implements Listener{
 						e.setCancelled(true);
 						player.updateInventory();
 					}
+
+					return;
+				}
+
+				// Event is constructed with oldPiece if they have something equipped in the specific player armor slot.
+				ItemStack oldItemPiece = null;
+				switch (newArmorType) {
+					case HELMET -> oldItemPiece = e.getPlayer().getInventory().getHelmet();
+					case CHESTPLATE -> oldItemPiece = e.getPlayer().getInventory().getChestplate();
+					case LEGGINGS -> oldItemPiece = e.getPlayer().getInventory().getLeggings();
+					case BOOTS -> oldItemPiece = e.getPlayer().getInventory().getBoots();
+				}
+				ArmorEquipEvent armorEquipEvent = new ArmorEquipEvent(e.getPlayer(), EquipMethod.HOTBAR, ArmorType.matchType(e.getItem()), oldItemPiece, e.getItem());
+				Bukkit.getServer().getPluginManager().callEvent(armorEquipEvent);
+
+				if (armorEquipEvent.isCancelled()) {
+					e.setCancelled(true);
+					player.updateInventory();
 				}
 			}
 		}

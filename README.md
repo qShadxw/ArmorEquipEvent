@@ -6,7 +6,7 @@ Should handle most ways to equip armor and not allow you to spam click equipping
 
 Click here to find the [Spigot](https://www.spigotmc.org/resources/lib-armorequipevent.5478/) page for this plugin/library.
 
-Current ArmorEquipEvent Version: 1.8.2
+Current ArmorEquipEvent Version: 1.8.3
 
 ## Usage
 Git clone, build then use inside your project!
@@ -26,7 +26,7 @@ public void onEquip(ArmorEquipEvent event) {
 ```
 You can also use the `getMethod()` function within the event to find how exactly they equipped or unequipped that armor piece.
 Methods:
-```
+``` 
 SHIFT_CLICK: Pressing shift + left or right click
 DRAG: Holding shift and dragging the item over the inventory slots then releasing left click.
 PICK_DROP: Picking up the item and dropping it into the armor slot or inventory
