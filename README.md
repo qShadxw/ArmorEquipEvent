@@ -6,7 +6,7 @@ Should handle most ways to equip armor and not allow you to spam click equipping
 
 Click here to find the [Spigot](https://www.spigotmc.org/resources/lib-armorequipevent.5478/) page for this plugin/library.
 
-Current ArmorEquipEvent Version: 1.8.3
+Current ArmorEquipEvent Version: 1.9 - **UNTESTED**
 
 ## Usage
 Git clone, build then use inside your project!
@@ -48,7 +48,7 @@ I have forked this to update it to the current versions of Minecraft and fix bug
 This is completely allowed by the author if you check the original repository. They mention "I give full permission to anyone to take over this project." 
 and that they are no-longer interested in the plugin.
 
-Current Minecraft Version: [1.19.4](https://www.minecraft.net/en-us/article/minecraft-java-edition-1-19-4)
+Current Minecraft Version: 1.20.1
 
 ### Original Author & Collaborators
 Author:

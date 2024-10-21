@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>uk.co.tmdavies</groupId>
     <artifactId>ArmorEquipEvent</artifactId>
-    <version>1.8.3-SNAPSHOT</version>
+    <version>1.9-SNAPSHOT</version>
 
     <name>ArmorEquipEvent</name>
 
@@ -62,7 +62,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.19.4-R0.1-SNAPSHOT</version>
+            <version>1.20.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
